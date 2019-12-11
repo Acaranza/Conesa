@@ -7,16 +7,16 @@
     <table class="table">
         <thead>
             <tr>
-                {% for field in fields %}
-                    <th>{{ field }}</th>
+                {% for field in fields %} <!-- itera por los elementos en la lista fields -->
+                    <th>{{ field }}</th> <!-- combina el html con la vaiable field que contiene al nombre del campo -->
                 {% endfor %}
             </tr>
         </thead>
         <tbody>
-                {% for client in clients %}
-                <tr>
-                    {% for field in client %}
-                        <th>{{ field }}</th>
+                {% for i in range(0, client_count) %}   <!-- itera por los elementos en la lista clients -->
+                <tr id="{{ i }}">
+                    {% for field in clients[i] %} <!-- itera por los campos del registro  -->
+                        <td>{{ field }}</td><!-- combina el html con la vaiable field que contiene al valor del campo -->
                     {% endfor %}
                 </tr>
                 {% endfor %}
